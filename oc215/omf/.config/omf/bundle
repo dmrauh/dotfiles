@@ -1,0 +1,6 @@
+package config
+package fuck
+package tmux-zen
+package z
+theme agnoster
+theme default

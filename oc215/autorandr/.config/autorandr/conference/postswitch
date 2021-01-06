@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+setxkbmap de
+nitrogen --set-auto ~/Pictures/Wallpapers/paul-cole.jpg
+i3-msg 'exec --no-startup-id ~/bin/polybarlaunch'
+

@@ -1,0 +1,61 @@
+# Always use nvim
+set editor = "nvim"
+
+set message_cachedir = ~/.neomutt/cache/bodies
+set tmpdir = ~/.neomutt/tmp
+
+# Folder hooks
+folder-hook 'account.de.uni-augsburg' "source ~/.config/neomutt/account.de.uni-augsburg"
+folder-hook 'account.de.posteo' "source ~/.config/neomutt/account.de.posteo; exec mu index -m $my_mail_directory"
+
+# Default account
+source ~/.config/neomutt/account.de.uni-augsburg
+
+# Enable solarized dark theme
+source ~/.config/neomutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+
+set crypt_verify_sig = yes
+set crypt_autosign = yes
+set crypt_replyencrypt = yes
+
+source ~/.config/neomutt/gpg.rc
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 53FD22F5
+set pgp_timeout = 3600
+
+source ~/.config/neomutt/smime.rc
+
+set realname = "Dominik Rauh"
+
+set thorough_search = yes
+set charset = "utf-8"
+set send_charset = "utf-8"
+set rfc2047_parameters = yes
+
+set fast_reply = yes
+set reply_to = yes
+set reverse_name = yes
+set include = yes
+set forward_quote = yes
+
+# when composing emails, use this command to get addresses from
+# the addressbook with khard first, and everything else from mu index
+set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --format=mutt-ab '%s' )"
+
+bind editor <space> noop
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+# auto convert text/html MIME type to text/plain
+auto_view text/html
+
+# prefer plain text
+alternative_order text/plain text/enriched text/html
+
+# Macros for switching accounts
+macro index <F2> '<sync-mailbox><enter-command>source ~/.config/neomutt/account.de.uni-augsburg<enter><change-folder>!<enter>'
+macro index <F3> '<sync-mailbox><enter-command>source ~/.config/neomutt/account.de.posteo<enter><change-folder>!<enter>'
+
+macro index,pager \cs "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cs "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+

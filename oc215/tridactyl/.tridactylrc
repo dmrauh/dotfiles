@@ -1,0 +1,59 @@
+" -*- mode: vimrc -*-
+
+
+" I want "vim-like" behaviour where removing a line from here makes the
+" setting disappear.
+sanitise tridactyllocal tridactylsync
+
+
+guiset gui full
+" guiset tabs always
+" guiset navbar autohide
+
+
+" this has to be done after the guiset stuff?
+colours shydactyl
+
+
+set editorcmd emacsclient -a emacs
+
+
+" general (g)
+set searchurls.gd https://duckduckgo.com/?q=
+set searchurls.gg https://google.de/search?q=
+" shops (s)
+set searchurls.sa https://www.amazon.de/s/?field-keywords=
+" translate/language (t)
+set searchurls.td https://dict.cc/?s=
+set searchurls.tu https://www.duden.de/suchen/dudenonline/
+" wikipedia (w)
+set searchurls.we https://en.wikipedia.org/wiki/Special:Search/
+set searchurls.wd https://de.wikipedia.org/wiki/Spezial:Suche/
+" nix(os) (n)
+set searchurls.np https://nixos.org/nixos/packages.html?channel=nixos-unstable&query=
+set searchurls.no https://nixos.org/nixos/options.html#
+" coding (c)
+set searchurls.cy https://hayoo.fh-wedel.de/?query=
+" maps (m)
+set searchurls.m https://www.openstreetmap.org/search?query=
+set searchurls.mg https://maps.google.com/maps/search/
+" research (r)
+set searchurls.rs https://scholar.google.de/scholar?q=
+" misc
+set searchurls.y https://www.youtube.com/results?search_query=
+" the default is duckduckgo
+set searchengine gd
+
+
+set hintfiltermode vimperator-reflow
+set hintchars uiaeosnrdt
+
+
+set smoothscroll true
+
+
+set yankto selection
+set putfrom selection
+
+" " vim: ft=vim ts=4 sw=4 sts=0 et fdm=marker fdc=3
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+## define the font for dmenu to be used
+DMENU_FN="Fira Sans-13"
+
+## background colour for unselected menu-items
+DMENU_NB="#2B2C2B"
+
+## textcolour for unselected menu-items
+DMENU_NF="#F9FAF9"
+
+## background colour for selected menu-items
+DMENU_SB="#FFB52A"
+
+## textcolour for selected menu-items
+DMENU_SF="#F9FAF9"
+

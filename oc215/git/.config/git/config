@@ -1,0 +1,21 @@
+[core]
+	quotepath = off
+
+[user]
+	name = Dominik Michael Rauh
+	email = dmrauh@posteo.de
+	username = dmrauh
+
+[diff]
+	tool = meld
+
+[merge]
+	tool = meld
+
+[mergetool "meld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+
+[alias]
+	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	status
+	s = "status --short --branch"

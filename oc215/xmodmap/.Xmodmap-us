@@ -1,0 +1,16 @@
+keycode 108 = Mode_switch Mode_switch Mode_switch Mode_switch
+keysym B = b B U201E U201C
+keysym N = n N U201C U201D
+keysym O = o O U00F6 U00D6
+keysym U = u U U00FC U00DC
+keysym A = a A U00E4 U00C4
+keysym S = s S U00DF U1E9E
+keysym E = e E U20AC U00E9
+keysym Y = y Y U2713 U274C
+keysym space = space U202F space space
+keysym minus = minus underscore endash emdash
+keysym period = period greater U2026 U2026
+keysym Right = Right U2192 U2192 U2192
+keysym Left = Left U2190 U2190 U2190
+keysym Up = Up U2191 U2191 U2191
+keysym Down = Down U2193 U2193 U2193

@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+setxkbmap us
+xmodmap ~/.Xmodmap-us
+nitrogen --head=0 --set-zoom-fill ~/Pictures/Wallpapers/paul-cole.jpg
+nitrogen --head=1 --set-zoom-fill ~/Pictures/Wallpapers/paul-cole.jpg
+i3-msg 'exec --no-startup-id ~/bin/polybarlaunch'
+
