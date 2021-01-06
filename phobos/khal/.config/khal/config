@@ -1,0 +1,17 @@
+[calendars]
+
+[[posteo_calendar_local]]
+path = ~/.calendars/Posteo/*
+type = discover
+color = dark green
+
+[[posteo_contacts_local]]
+path = ~/.contacts/Posteo/*
+type = discover
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M

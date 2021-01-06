@@ -1,0 +1,98 @@
+# paths
+set message_cachedir = "~/.neomutt/cache/bodies/"
+set header_cache = "~/.neomutt/cache/headers/"
+set tmpdir = "~/.neomutt/tmp/"
+set folder = "~/.mail/"
+
+# Enable solarized dark theme
+source "~/.config/neomutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc"
+
+# editor
+set editor = "nvim"
+bind editor <space> noop
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
+# Posteo account data
+set my_pass       = "`vdirsyncpass Email/posteo.de`"
+set imap_user     = dmrauh@posteo.de
+set imap_pass     = $my_pass
+set from          = $imap_user
+set ssl_force_tls = yes
+set smtp_url      = smtps://$imap_user:$my_pass@posteo.de
+
+# Posteo folders
+set spoolfile     = "+Posteo/INBOX"
+set mbox          = "+Posteo/Archive"
+set record        = "+Posteo/Sent"
+set postponed     = "+Posteo/Drafts"
+set trash         = "+Posteo/Trash"
+
+mailboxes $spoolfile $mbox $record $postponed $trash "+Posteo/Buildroot"
+
+#basic options
+set realname      = "Dominik Rauh"
+unset signature
+set thorough_search = yes
+set rfc2047_parameters = yes
+set charset = "utf-8"
+set send_charset = "utf-8"
+
+# compose view options
+set envelope_from = yes
+set fast_reply = yes
+set reply_to = yes
+set reverse_name = yes
+set include = yes
+set forward_quote = yes
+
+# when composing emails, use this command to get addresses from
+# the addressbook with khard first, and everything else from mu index
+set query_command = "( khard email --parsable '%s' | sed -n '1!p'; mu cfind --format=mutt-ab '%s' )"
+
+# Allow Mutt to open a new IMAP connection automatically.
+unset imap_passive
+
+# Keep the IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# How often to check for new mail (time in seconds).
+set mail_check = 120
+
+# GPG/PGP
+source ~/.config/neomutt/gpg.rc
+set pgp_use_gpg_agent = yes
+set pgp_sign_as = 53FD22F5
+set pgp_timeout = 3600
+set crypt_autosign = no
+set crypt_replyencrypt = yes
+
+source ~/.config/neomutt/smime.rc
+
+# query contacts
+set query_command= "khard email --parsable '%s'"
+
+# auto convert text/html MIME type to text/plain
+auto_view text/html
+
+# prefer plain text
+alternative_order text/plain text/enriched text/html
+
+# mutt macros for mu
+macro index <F8> "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search " "mu find"
+macro index <F9> "<change-folder-readonly>~/.mail/search" "mu find results"
+
+macro index,pager \cs "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cs "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+# sidebar settings
+set sidebar_visible = yes
+set sidebar_width = 25
+set sidebar_format = "%B%?F? ?%* %?N?%N/?%S"
+set mail_check_stats = yes
+set sidebar_short_path # Shorten mailbox names
+set sidebar_delim_chars="/" # Delete everything up to the last / character
+
+bind index,pager \CP sidebar-prev # Ctrl-Shift-P - Previous Mailbox
+bind index,pager \CN sidebar-next # Ctrl-Shift-N - Next Mailbox
+bind index,pager \CO sidebar-open # Ctrl-Shift-O - Open Highlighted Mailbox

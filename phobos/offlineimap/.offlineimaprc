@@ -1,0 +1,18 @@
+[general]
+accounts = Posteo
+pythonfile = ~/.offlineimap.py
+
+[Account Posteo]
+localrepository = Posteo-Local
+remoterepository = Posteo-Remote
+
+[Repository Posteo-Local]
+type = Maildir
+localfolders = ~/.mail/Posteo
+
+[Repository Posteo-Remote]
+type = IMAP
+remotehost = posteo.de
+remoteuser = dmrauh@posteo.de
+remotepasseval = get_pass("Email/posteo.de")
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt

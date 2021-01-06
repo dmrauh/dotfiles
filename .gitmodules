@@ -1,0 +1,12 @@
+[submodule "phobos/neomutt/.config/neomutt/mutt-colors-solarized"]
+	path = phobos/neomutt/.config/neomutt/mutt-colors-solarized
+	url = https://github.com/altercation/mutt-colors-solarized.git
+[submodule "phobos/kitty/.config/kitty/kitty-themes"]
+	path = phobos/kitty/.config/kitty/kitty-themes
+	url = https://github.com/dexpota/kitty-themes.git
+[submodule "phobos/fish/.config/fish/dircolors-solarized"]
+	path = phobos/fish/.config/fish/dircolors-solarized
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "phobos/doom-emacs/.doom.d/lsp-docker"]
+	path = phobos/doom-emacs/.doom.d/lsp-docker
+	url = https://github.com/emacs-lsp/lsp-docker.git
