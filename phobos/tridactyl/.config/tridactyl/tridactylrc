@@ -1,0 +1,39 @@
+" -*- mode: vimrc -*-
+
+colours shydactyl
+
+set smoothscroll true
+
+" general (g)
+set searchurls.gd https://duckduckgo.com/?q=
+set searchurls.gg https://google.de/search?q=
+
+" shops (s)
+set searchurls.sa https://www.amazon.de/s?k=
+
+" translate/language (t)
+set searchurls.td https://dict.cc/?s=
+set searchurls.tu https://www.duden.de/suchen/dudenonline/
+
+" wikipedia (w)
+set searchurls.we https://en.wikipedia.org/wiki/Special:Search/
+set searchurls.wd https://de.wikipedia.org/wiki/Spezial:Suche/
+
+" nix(os) (n)
+set searchurls.np https://search.nixos.org/packages?query=%s&sort=relevance&channel=20.03
+set searchurls.no https://search.nixos.org/options?query=%s&sort=relevance&channel=20.03
+
+" maps (m)
+set searchurls.m https://www.openstreetmap.org/search?query=
+set searchurls.mg https://maps.google.com/maps/search/
+
+" research (r)
+set searchurls.rs https://scholar.google.de/scholar?q=
+
+" misc
+set searchurls.y https://www.youtube.com/results?search_query=
+
+" the default is duckduckgo
+set searchengine gd
+
+" vim: set filetype=tridactyl
